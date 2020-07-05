@@ -28,13 +28,15 @@ function App() {
       <div className="row">
 
 
-        <div className='col m4 s6'>
+        <div className='col  s4'>
           <span className="heading">Name</span>
         </div>
 
-        <div className='col m4 s6'>
+        <div className='col  s4'>
           <span className='heading'>Phone</span>
         </div>
+
+        
       
       </div>
 
@@ -46,12 +48,16 @@ function App() {
 
             <div className="row" key={sub.id}>
 
-              <div className='col m4 s6'>
+              <div className='col s4 '>
           <span className="sub-data">{sub.name}</span>
               </div>
 
-              <div className='col m4 s6'>
+              <div className='col s4'>
           <span className='sub-data'>{sub.contact}</span>
+              </div>
+
+              <div className='col  s4'>
+                <button className="btn waves-effect waves-light red">Delete</button>
               </div>
 
 
