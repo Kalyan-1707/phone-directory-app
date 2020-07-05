@@ -1,0 +1,26 @@
+.addbtn
+{
+    margin: 20px;
+    background-color: #7ab97a;
+    font-size: large;
+    border: none;
+    padding: 10px 20px;
+    text-transform: uppercase;
+    color: whitesmoke;
+}
+
+.phoneTable span{
+
+    width: 300px;
+    text-align: center;
+
+}
+
+.heading{
+
+    text-transform: uppercase;
+    font-weight: 600;
+    color: gray;
+    font-size: 1rem;
+
+}

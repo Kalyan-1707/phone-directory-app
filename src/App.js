@@ -1,17 +1,24 @@
 import React from 'react';
+import './App.css'
 import Header from './Header'
 
 function App() {
   return (
     <div>
       <Header />
-      <button>
+      <button className="addbtn waves-effect">
         Add
       </button>
-      <div>
-        <span>Name</span><br/>
-        <span>Phone</span><br/>
-        <input></input>
+      <div className="row">
+        
+
+    <div className='col m4 s6'>
+        <span className="heading">Name</span> 
+        </div>
+
+        <div className='col m4 s6'>
+        <span className='heading'>Phone</span>
+        </div>
       </div>
       
     </div>
