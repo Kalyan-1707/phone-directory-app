@@ -16,8 +16,17 @@
 
 }
 
+.sub-data{
+
+    text-transform: capitalize;
+    text-align: center;
+    font-weight: 600;
+    font-size: 1rem;
+}
+
 .heading{
 
+    text-align: center;
     text-transform: uppercase;
     font-weight: 600;
     color: gray;
