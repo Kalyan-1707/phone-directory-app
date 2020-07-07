@@ -4,6 +4,26 @@ import './AddSubscriber.css'
 class AddSubscriber extends React.Component
 {
 
+    constructor()
+    {
+        super();
+        this.state = {
+            id : 0,
+            name : " ",
+            phone : " "
+        }
+        
+    }
+
+    onClickAdd = (e) =>
+    {
+        const state=this.state;
+        state[e.target.name]=e.target.value;
+        this.setState(state);
+            
+    
+    }
+
     render()
     {
 
@@ -17,9 +37,9 @@ class AddSubscriber extends React.Component
                 <div className="col s12 m4 offset-m4">
                 <form >
                     <label htmlFor="name">Name</label>
-                    <input type="text" name="name" />
+                    <input type="text" name="name" onChange={this.onClickAdd}/>
                     <label htmlFor="phone">Phone</label>
-                    <input type="number" name="phone"/>
+                    <input type="number" name="phone" onChange={this.onClickAdd}/>
                 </form>
                 
                 <div>
@@ -31,10 +51,11 @@ class AddSubscriber extends React.Component
                 
                 <br/>
                 <br/>
+                
                 <div>
                     <p>Subscriber to be added</p>
-                    <p>Name : </p>
-                    <p>Phone : </p>
+                    <p>Name : {this.state.name}</p>
+                    <p>Phone : {this.state.phone}</p>
                 </div>
                 
                 </div>
