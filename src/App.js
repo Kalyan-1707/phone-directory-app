@@ -19,7 +19,7 @@ function App() {
   ]
   return (
     <div>
-      <Header />
+      <Header heading="Phone Directory"/>
       <button className="addbtn waves-effect">
         Add
       </button>
