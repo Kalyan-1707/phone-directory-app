@@ -1,9 +1,24 @@
 import React from 'react';
 import './App.css'
-import Header from './Header'
+import Header from './components/Header'
 
-function App() {
+class App extends React.Component {
 
+  called(e)
+  {
+    alert('called');
+  }
+
+  calling()
+  {
+
+    this.called();
+
+  }
+
+  render()
+  {
+    this.calling();
   let subs=[
     {
       id : 1,
@@ -72,11 +87,12 @@ function App() {
       }
 
 
-
-
-
     </div>
   );
+
+}
+
+
 }
 
 export default App;
