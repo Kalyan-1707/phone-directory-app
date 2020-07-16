@@ -1,37 +1,12 @@
 import React from 'react';
-import './App.css'
-import Header from './components/Header'
+import './ShowSubscribers.css'
+import Header from './Header'
 
-class App extends React.Component {
+class ShowSubscribers extends React.Component {
 
-  called(e)
-  {
-    alert('called');
-  }
-
-  calling()
-  {
-
-    this.called();
-
-  }
-
+  
   render()
   {
-    this.calling();
-  let subs=[
-    {
-      id : 1,
-      name : 'Alpha',
-      contact : '987654321'
-    },
-    {
-      id : 2,
-      name : 'Hydra',
-      contact : '123456789'
-
-    }
-  ]
   return (
     <div>
       <Header heading="Phone Directory"/>
@@ -57,7 +32,7 @@ class App extends React.Component {
 
       {
 
-        subs.map( sub => {
+        this.props.subscribersList.map( sub => {
 
           return (
 
@@ -95,4 +70,4 @@ class App extends React.Component {
 
 }
 
-export default App;
+export default ShowSubscribers;

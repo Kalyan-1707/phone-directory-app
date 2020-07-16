@@ -1,12 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-//import App from './App';
+import PhoneDirectory from './PhoneDirectory'
+
 import * as serviceWorker from './serviceWorker';
-import AddSubsriber from './components/AddSubscriber';
+//import AddSubsriber from './components/AddSubscriber';
 
 ReactDOM.render(
-  <AddSubsriber />,
+  <PhoneDirectory />,
   document.getElementById('root')
 );
 
