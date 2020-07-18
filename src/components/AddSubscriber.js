@@ -1,6 +1,7 @@
 import React from 'react'
 import Header from './Header'
 import './AddSubscriber.css'
+import {Link} from 'react-router-dom';
 class AddSubscriber extends React.Component
 {
 
@@ -10,7 +11,7 @@ class AddSubscriber extends React.Component
         this.state = {
             id : 0,
             name : " ",
-            phone : " "
+            contact : " "
         }
         
     }
@@ -20,7 +21,7 @@ class AddSubscriber extends React.Component
         const state=this.state;
         state[e.target.name]=e.target.value;
         this.setState(state);
-    
+        
     }
 
     addSubscriberEventHandler= (e) => {
@@ -29,6 +30,13 @@ class AddSubscriber extends React.Component
 
         this.props.addSubscriber(this.state);
 
+        this.setState({
+            id: 0,
+            name: " ",
+            contact: " "
+        })
+
+        this.props.history.push("/");
 
     }
 
@@ -46,14 +54,14 @@ class AddSubscriber extends React.Component
                 <form onSubmit={this.addSubscriberEventHandler.bind(this)}>
                     <label htmlFor="name">Name</label>
                     <input type="text" name="name" onChange={this.onClickAdd}/>
-                    <label htmlFor="phone">Phone</label>
-                    <input type="number" name="phone" onChange={this.onClickAdd}/>
+                    <label htmlFor="contact">Contact</label>
+                    <input type="number" name="contact" onChange={this.onClickAdd}/>
                 
                 
                 <div>
                 
                      <button className="btn waves-effect left" >Add</button>
-                     <button className="btn waves-effect right" type="button">back</button>
+                    <Link to="/"><button className="btn waves-effect right" type="button">back</button></Link>
 
                 </div>
                        
@@ -65,7 +73,7 @@ class AddSubscriber extends React.Component
                 <div>
                     <p>Subscriber to be added</p>
                     <p>Name : {this.state.name}</p>
-                    <p>Phone : {this.state.phone}</p>
+                    <p>contact : {this.state.contact}</p>
                 </div>
                 
                 </div>

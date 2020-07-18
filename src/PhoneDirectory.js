@@ -1,6 +1,8 @@
 import React from 'react';
-//import AddSubscriber from './components/AddSubscriber'
+import AddSubscriber from './components/AddSubscriber'
 import ShowSubscribers from './components/ShowSubscribers'
+import { BrowserRouter as Router, Route} from 'react-router-dom';
+
 class PhoneDirectory extends React.Component
 {
 
@@ -11,18 +13,32 @@ class PhoneDirectory extends React.Component
         this.state={
             subscribersList:[
                 {
-                    id: 1,
-                    name: 'Alpha',
-                    contact: '987654321'
-                },
-                {
-                    id: 2,
-                    name: 'Hydra',
-                    contact: '123456789'
-
+                    id:1,
+                    name:"abc",
+                    contact:987654321
                 }
+                
             ]
         }
+
+    }
+
+    delSubscriber = (subscriberId) => {
+
+        let subscribersList=this.state.subscribersList;
+        let newList=[];
+
+        subscribersList.forEach( (item) => {
+
+            if(item.id!==subscriberId)
+                newList.push(item);
+
+        })
+
+
+        subscribersList=newList;
+        this.setState({subscribersList:newList});
+        console.log(this.state.subscribersList);
 
     }
 
@@ -46,7 +62,7 @@ class PhoneDirectory extends React.Component
         }
 
         subscribersList.push(newSubscriber);
-        this.setState(subscribersList);
+        this.setState({subscribersList:subscribersList});
         console.log(subscribersList);
     
     }
@@ -55,8 +71,26 @@ class PhoneDirectory extends React.Component
     render()
     {
         return (
-        //<AddSubscriber addSubscriber={this.addSubscriber}/>
-        <ShowSubscribers subscribersList={this.state.subscribersList}/>
+        //
+       
+        <main>
+        <Router>
+                    <Route path="/" exact
+                    render={(props) =>
+                    <ShowSubscribers {...props} subscribersList={this.state.subscribersList} delSubscriber={this.delSubscriber} />
+                         }>
+                    </Route>
+
+                    <Route path="/add"
+                        render={({history},props) =>
+                            <AddSubscriber history={history} {...props} addSubscriber={this.addSubscriber} />
+                        }>
+                    </Route>     
+
+        
+        </Router>  
+        </main>
+       
         )
         
     }
