@@ -15,7 +15,7 @@ class PhoneDirectory extends React.Component
                 {
                     id:1,
                     name:"abc",
-                    contact:987654321
+                    contact:9999999999
                 }
                 
             ]
