@@ -53,19 +53,18 @@ class AddSubscriber extends React.Component
                 <div className="col s12 m4 offset-m4">
                 <form onSubmit={this.addSubscriberEventHandler.bind(this)}>
 
-                    <div className="input-field s10">
+                    <div className="input-field">
                          <i className="material-icons prefix">account_circle</i>
-                         <input type="text" name="name" onChange={this.onClickAdd}/>
+                         <input type="text" name="name" onChange={this.onClickAdd}  required autoFocus/>
                          <label htmlFor="name">Name</label>
                     </div>
 
-                    <div className="input-field s10">
-                       
+                    <div className="input-field">
+                        
                         <i className="material-icons prefix">phone</i>
-                        <input type="number" name="contact" min="6000000000" max="9999999999" title="Should be a number" onChange={this.onClickAdd}/>
+                        <input type="text" name="contact" pattern="[0-9]{10,10}" title="Number Should be 10 digits" onChange={this.onClickAdd}/>
                         <label htmlFor="contact">Contact</label>
                         
-
                     </div>
                 
                 <div>
