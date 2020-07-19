@@ -38,15 +38,14 @@ class PhoneDirectory extends React.Component
 
         subscribersList=newList;
         this.setState({subscribersList:newList});
-        console.log(this.state.subscribersList);
-
+       
     }
 
     addSubscriber = (newSubscriber) => {
         
         let subscribersList=this.state.subscribersList;
 
-        console.log("Phone directory");
+        
 
         if(subscribersList.length>0)
         {
@@ -63,7 +62,7 @@ class PhoneDirectory extends React.Component
 
         subscribersList.push(newSubscriber);
         this.setState({subscribersList:subscribersList});
-        console.log(subscribersList);
+        
     
     }
 
@@ -71,7 +70,6 @@ class PhoneDirectory extends React.Component
     render()
     {
         return (
-        //
        
         <main>
         <Router>
