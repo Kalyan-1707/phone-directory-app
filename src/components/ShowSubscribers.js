@@ -2,9 +2,27 @@ import React from 'react';
 import './ShowSubscribers.css'
 import Header from './Header'
 import { Link } from "react-router-dom";
+import { Sugar } from 'react-preloaders';
 
 class ShowSubscribers extends React.Component {
 
+  constructor()
+  {
+    super();
+    this.state={
+      loading:true
+    }
+  }
+
+  componentDidMount=() => {
+
+    setTimeout(() => {
+
+      this.setState({ loading: false });
+
+    }, 1000);
+    
+  }
 
   deleteSubscriberHandler =(id) => {
 
@@ -14,7 +32,15 @@ class ShowSubscribers extends React.Component {
 
   render()
   {
+
   return (
+    
+    <div className="main-container">
+
+    {
+
+      this.state.loading?<Sugar/>:
+
     <div>
       <Header heading="Phone Directory"/>
       
@@ -35,6 +61,8 @@ class ShowSubscribers extends React.Component {
         
       
       </div>
+
+      
 
       {
 
@@ -82,6 +110,11 @@ class ShowSubscribers extends React.Component {
       </div>
 
     </div>
+
+    }
+
+  </div>
+
   );
 
 }

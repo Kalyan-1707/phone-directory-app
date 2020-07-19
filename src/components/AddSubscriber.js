@@ -2,6 +2,10 @@ import React from 'react'
 import Header from './Header'
 import './AddSubscriber.css'
 import {Link} from 'react-router-dom';
+import { Sugar } from 'react-preloaders';
+
+
+
 class AddSubscriber extends React.Component
 {
 
@@ -11,7 +15,8 @@ class AddSubscriber extends React.Component
         this.state = {
             id : 0,
             name : " ",
-            contact : " "
+            contact : " ",
+            loading:true
         }
         
     }
@@ -40,10 +45,28 @@ class AddSubscriber extends React.Component
 
     }
 
+    componentDidMount = () => {
+
+        setTimeout(() => {
+
+            this.setState({ loading: false });
+
+        }, 1000);
+
+    }
+
+
+
     render()
     {
 
         return(
+
+            <div className="main-container">
+
+            {
+                this.state.loading?<Sugar/>:
+            
 
             <div>
                 <Header heading="Add Subscriber"/>
@@ -98,6 +121,9 @@ class AddSubscriber extends React.Component
            
             </div>
 
+            }
+
+            </div>
         )
 
     }
