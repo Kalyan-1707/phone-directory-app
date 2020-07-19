@@ -52,11 +52,21 @@ class AddSubscriber extends React.Component
                 
                 <div className="col s12 m4 offset-m4">
                 <form onSubmit={this.addSubscriberEventHandler.bind(this)}>
-                    <label htmlFor="name">Name</label>
-                    <input type="text" name="name" onChange={this.onClickAdd}/>
-                    <label htmlFor="contact">Contact</label>
-                    <input type="number" name="contact" onChange={this.onClickAdd}/>
-                
+
+                    <div className="input-field s10">
+                         <i className="material-icons prefix">account_circle</i>
+                         <input type="text" name="name" onChange={this.onClickAdd}/>
+                         <label htmlFor="name">Name</label>
+                    </div>
+
+                    <div className="input-field s10">
+                       
+                        <i className="material-icons prefix">phone</i>
+                        <input type="number" name="contact" min="6000000000" max="9999999999" title="Should be a number" onChange={this.onClickAdd}/>
+                        <label htmlFor="contact">Contact</label>
+                        
+
+                    </div>
                 
                 <div>
                 
