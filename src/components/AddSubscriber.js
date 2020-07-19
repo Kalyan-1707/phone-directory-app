@@ -62,17 +62,24 @@ class AddSubscriber extends React.Component
                     <div className="input-field">
                         
                         <i className="material-icons prefix">phone</i>
-                        <input type="text" name="contact" pattern="[0-9]{10,10}" title="Number Should be 10 digits" onChange={this.onClickAdd}/>
+                        <input type="text" id="contact" name="contact" data-length="10" pattern="[0-9]{10,10}" title="Number Should be 10 digits" onChange={this.onClickAdd}/>
                         <label htmlFor="contact">Contact</label>
                         
                     </div>
                 
-                <div>
-                
-                     <button className="btn waves-effect left" >Add</button>
-                    <Link to="/"><button className="btn waves-effect right" type="button">back</button></Link>
+                    <br/>
 
-                </div>
+                    <div>
+                
+                     <button className="btn waves-effect left" >
+                          <i className="fas fa-user-plus left"></i>
+                              Add
+                    </button>
+                    <Link to="/"><button className="btn waves-effect right" type="button">
+                        <i class="fas fa-arrow-left left"></i>
+                        back</button></Link>
+
+                    </div>
                        
                 </form>
 

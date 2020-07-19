@@ -53,7 +53,11 @@ class ShowSubscribers extends React.Component {
               </div>
 
               <div className='col  s4 m3'>
-                <button className="btn waves-effect waves-light red" onClick={this.deleteSubscriberHandler.bind(this,sub.id)}>Delete</button>
+                <button className="btn waves-effect waves-light red" onClick={this.deleteSubscriberHandler.bind(this,sub.id)}>
+
+                  <i className="fas fa-user-minus "></i> 
+                  
+                </button>
               </div>
 
 
